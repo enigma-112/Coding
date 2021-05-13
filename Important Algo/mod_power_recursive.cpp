@@ -14,7 +14,6 @@ void fastio(){
 
 ll mod_power(ll a,ll b,ll c){ // return (a^b)%c
 	if(b==0){return 1;}
-	if(a==0){return 0;}
 	ll temp = mod_power(a,b/2,c);
 	ll ans;
 	if(b%2==0){
