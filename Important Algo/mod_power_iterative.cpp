@@ -12,24 +12,27 @@ void fastio(){
     #endif
 }
 
-ll fast_power(ll a, ll b){
-	ll ans = 1;
+ll mod_power(ll a,ll b,ll c){ // return (a^b)%c
+	a = (a%c);	
+	ll ans = 1;	
+	if(a==0){return 0;}
 	while(b>0){
 		if(b&1){
-			ans = ans*a;
+			ans = (ans*a)%c;
 		}
-
-		a=a*a;
-		b=b>>1;
+		b = (b>>1);
+		a = (a*a)%c;
 	}
-	return ans;
+	return ans ;
+
+
 }
 int main(){
 	fastio();
 	ios_base::sync_with_stdio(0);
     cin.tie(0);
-	ll a,b;cin>>a>>b;
-	ll ans = fast_power(a,b);
+	ll a,b,c;cin>>a>>b>>c;
+	ll ans = mod_power(a,b,c);
 	cout<<ans<<endl;
 
 }
